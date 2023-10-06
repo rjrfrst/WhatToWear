@@ -1,24 +1,32 @@
 import java.util.Scanner;
 
+//This is the second edit, after looking at the solution.
 public class WhatToWear {
     public static void main(String[] args) {
 
-        System.out.println("What's your ideal temperature, I don't know what to wear?");
-
+//        This ask the user to input the forecast, (sun, rain, cloud)
+        System.out.println("What is the forecast today, I don't know what to wear?");
         Scanner reader = new Scanner(System.in);
-        int temperature = reader.nextInt();
-        int temperatureToday = 16;
+        String weatherConditions = reader.nextLine();
 
-        if (temperature == temperatureToday){
-            System.out.println("Wear casual clothes");
-        } else if (temperature>temperatureToday || temperature >= 25) {
-            System.out.println("It's too hot, maybe a vest");
-        } else {
-            System.out.println("It's too cold, maybe bring a coat?");
+//        This ask the user to input the temperature (10, 15, 20)
+        System.out.println("What is the temperature today?");
+        int temperatureToday = reader.nextInt();
+
+//        Afterward, the user will be asked two inputs
+
+        if (weatherConditions.equals("rain") && temperatureToday < 13){
+            System.out.println("Too cold, wear a jacket!");
+        } else if (weatherConditions.equals("snow") || temperatureToday <= 8) {
+            System.out.println("Super cold, stay indoors!");
+        } else if (weatherConditions.equals("sun") || temperatureToday >= 16) {
+            System.out.println("Weather is perfect, wear comfy clothes");
         }
+
+
+
+
 
     }
 }
-// Ask  the user to input Today's temperature
-// If user input the same ideal temp, output = wear casual clothes
-// If user input no the ideal temp, output = think about your outfit
+
